@@ -1,0 +1,13 @@
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACM | grep -E '\.(js|ts|tsx)$')
+
+[ -z "$STAGED_FILES" ] && echo "${GREEN}✔ No JS/TS files staged for commit.${NC}" && exit 0
+
+echo "$STAGED_FILES" | xargs pnpm exec next lint --max-warnings=0 --no-ignore --file
+
+echo "$STAGED_FILES" | xargs pnpm exec prettier --check .
+echo "${GREEN}✔ No Prettier formatting issues${NC}"
+
+echo "${GREEN}✔ Pre-commit checks passed.${NC}"
