@@ -1,13 +1,9 @@
-'use client';
-import { redirect } from 'next/navigation';
+import { Home } from './home/home';
 
-import { PageWrapper } from '@/components';
+// <Home /> component is specially isolated separately.
+// Let's imagine that we want to implement different logic on the home page,
+// so we simply delete the imported <Home/> components and use them on another router.
 
 export default function HomePage() {
-  return (
-    <PageWrapper>
-      <button onClick={() => redirect('/games/millionaire-quiz')}>REDIRECT BUTTON</button>
-      HOME
-    </PageWrapper>
-  );
+  return <Home />;
 }

@@ -1,0 +1,31 @@
+.primary {
+  background-color: var(--color-primary);
+  color: var(--color-secondary-text);
+  padding: 24px 30px;
+  border-radius: 12px;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+}
+
+.primary:hover {
+  background-color: var(--color-hover);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 972px) {
+  .primary {
+    padding: 20px 24px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .primary {
+    padding: 16px 24px;
+    font-size: 14px;
+  }
+}
