@@ -5,7 +5,7 @@ import styles from './header.module.css';
 
 const INPUT_ID = 'menu-checkbox';
 
-export function Header({ data }: { data: Question }) {
+export function Header({ question }: { question: Question }) {
   return (
     <nav className={styles.container}>
       <input id={INPUT_ID} className={styles.input} type="checkbox" />
@@ -13,7 +13,7 @@ export function Header({ data }: { data: Question }) {
         <span className={styles.line} />
       </label>
 
-      <QuizPrizes data={data} className={styles.content} />
+      <QuizPrizes question={question} className={styles.content} />
     </nav>
   );
 }

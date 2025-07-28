@@ -5,14 +5,12 @@ import { Header } from '../header/header';
 
 import styles from './quiz-questions.module.css';
 
-export function QuizQuestions({ data }: { data: Question }) {
+export function QuizQuestions({ question }: { question: Question }) {
   return (
     <div className={styles.container}>
-      <Header data={data} />
-      <h1 className={styles.question}>
-        How old your elder brother was 10 years before you was born, mate?
-      </h1>
-      <QuizAnswer />
+      <Header question={question} />
+      <h1 className={styles.question}>{question.question}</h1>
+      <QuizAnswer question={question} />
     </div>
   );
 }

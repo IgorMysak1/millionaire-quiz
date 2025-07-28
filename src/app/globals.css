@@ -9,6 +9,9 @@ body {
   height: 100%;
 }
 
+/* It's better to define spaces and other CSS data as well
+but colors is core of it as it's to implement theme switching later*/
+
 :root {
   /* Main colors */
   --color-primary: #ff8b37;
@@ -33,5 +36,6 @@ body {
   --color-active-border: #ff8b37;
 
   /* Hover */
-  --color-hover: #ffac70;
+  --color-primary-hover: #ffac70;
+  --color-secondary-hover: #ff8b37;
 }

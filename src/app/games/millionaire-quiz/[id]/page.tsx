@@ -1,32 +1,27 @@
+import { notFound } from 'next/navigation';
+
 import { PageWrapper } from '@/components';
-import { Question } from '@/types';
 
 import { QuizPrizes } from './components/quiz-prizes/quiz-prizes';
 import { QuizQuestions } from './components/quiz-questions/quiz-questions';
+import { getQuestion } from './api/getQuestion';
 
 import styles from './page.module.css';
 
-const data: Question = {
-  question: 'How old your elder brother was 10 years before you was born, mate?',
-  options: [
-    { id: '1', option: '10 years' },
-    { id: '2', option: '11 years' },
-    { id: '3', option: '12 years' },
-    { id: '4', option: '13 years' },
-  ],
-  amountOfCorrectOptions: 1,
-  prizes: [
-    500, 1_000, 2_000, 4_000, 8_000, 16_000, 32_000, 64_000, 125_000, 250_000, 500_000, 1_000_000,
-  ],
-  currentPrize: 2_000,
-};
+export default async function QuestionPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
 
-export default async function QuestionPage() {
+  const question = await getQuestion(id ?? '');
+
+  if (!question) {
+    notFound();
+  }
+
   return (
     <PageWrapper disablePadding>
       <div className={styles.container}>
-        <QuizQuestions data={data} />
-        <QuizPrizes data={data} className={styles.prizeSteps} />
+        <QuizQuestions question={question} />
+        <QuizPrizes question={question} className={styles.prizeSteps} />
       </div>
     </PageWrapper>
   );

@@ -12,6 +12,7 @@ export function PageWrapper({
   disablePadding,
   transparentBackground,
 }: PropsWithChildren<Props>) {
+  // Should be a utility to manage it better (it's a quick solution only for test task)
   const classNames = [
     styles.wrapper,
     transparentBackground ? '' : styles.background,
