@@ -1,9 +1,5 @@
-import { PageWrapper } from '@/components';
+import { redirect } from 'next/navigation';
 
 export default async function MillionaireQuizPage() {
-  return (
-    <PageWrapper>
-      <p>Millionaire Quiz Page</p>
-    </PageWrapper>
-  );
+  return redirect('/games/millionaire-quiz/start');
 }

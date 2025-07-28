@@ -1,0 +1,22 @@
+.container {
+  height: 100%;
+  display: flex;
+  gap: 8px;
+  background-color: var(--color-secondary-background);
+}
+
+.prizeSteps {
+  width: 30%;
+}
+
+@media (max-width: 992px) {
+  .prizeSteps {
+    width: 40%;
+  }
+}
+
+@media (max-width: 762px) {
+  .prizeSteps {
+    display: none;
+  }
+}

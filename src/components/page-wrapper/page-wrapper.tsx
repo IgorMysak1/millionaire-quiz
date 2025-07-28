@@ -4,10 +4,19 @@ import styles from './page-wrapper.module.css';
 
 interface Props {
   transparentBackground?: boolean;
+  disablePadding?: boolean;
 }
 
-export function PageWrapper({ children, transparentBackground }: PropsWithChildren<Props>) {
-  const classNames = [styles.wrapper, transparentBackground ? '' : styles.background]
+export function PageWrapper({
+  children,
+  disablePadding,
+  transparentBackground,
+}: PropsWithChildren<Props>) {
+  const classNames = [
+    styles.wrapper,
+    transparentBackground ? '' : styles.background,
+    disablePadding ? styles.disablePadding : '',
+  ]
     .filter(Boolean)
     .join(' ');
 

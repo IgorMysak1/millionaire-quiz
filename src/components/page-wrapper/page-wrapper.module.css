@@ -11,3 +11,7 @@
 .background {
   background-color: var(--color-primary-background);
 }
+
+.disablePadding {
+  padding: 0;
+}

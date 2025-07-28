@@ -1,0 +1,17 @@
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--color-primary-background);
+  gap: 8px;
+  overflow: scroll;
+  padding: 16px;
+}
+
+.prize {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+}

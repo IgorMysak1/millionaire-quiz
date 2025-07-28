@@ -29,3 +29,18 @@
     font-size: 14px;
   }
 }
+
+.secondary {
+  padding: 12px 24px;
+  border: 2px solid var(--color-primary-border);
+  background-color: var(--color-primary-background);
+  border-radius: 4px;
+  font-size: 16px;
+
+  display: flex;
+  gap: 8px;
+}
+
+.letter {
+  color: var(--color-active-text);
+}

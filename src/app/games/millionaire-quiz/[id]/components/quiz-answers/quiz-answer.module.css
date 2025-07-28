@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.option {
+  width: calc(50% - 10px);
+}
+
+@media (max-width: 992px) {
+  .option {
+    width: 100%;
+  }
+}
