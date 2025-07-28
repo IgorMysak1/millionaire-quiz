@@ -4,6 +4,7 @@ import './globals.css';
 
 const inter = Inter({
   weight: '600',
+  subsets: ['cyrillic'],
 });
 
 export default function RootLayout({

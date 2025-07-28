@@ -11,6 +11,9 @@ pnpm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+// I have left different comments in the project.
+**Important to say**: I was doing that because it's a test task, so I want to show you my mindset more. I am not doing this so many in commercial development)
+
 ## The file structure
 
 - App directory creates pages and collects features from other folders
