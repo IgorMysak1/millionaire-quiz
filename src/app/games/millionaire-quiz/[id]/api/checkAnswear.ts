@@ -1,5 +1,6 @@
 import { QuestionDB } from '@/types';
-import { getQuestion } from '@/app/games/millionaire-quiz/[id]/api/getQuestion';
+import { getQuestion } from './getQuestion';
+import DB from './db.json';
 
 // Quick workaround to compare 2 arrays. I wouldn't use it for productions :)
 const ifTwoArraySimilar = (arr1: string[], arr2: string[]) => {
@@ -9,8 +10,7 @@ const ifTwoArraySimilar = (arr1: string[], arr2: string[]) => {
 // A small implementation of fake BE
 export async function checkAnswer(id: string, answers: string[]) {
   try {
-    const response = await fetch('http://localhost:3000/db.json'); // Pass id to BE
-    const questions = await response.json();
+    const questions = DB;
     const question = questions.find((answer: QuestionDB) => answer.id === id);
     if (!question) {
       throw new Error('Question not found');
